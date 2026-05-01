@@ -12,7 +12,7 @@ import {
 
 export default function QualityInsights() {
   const { theme } = useTheme();
-  const { outlet, month, setOutlet, setMonth, reset, filters } = useFilters();
+  const { outlets: selectedOutlets, months: selectedMonths, setOutlets, setMonths, reset, filters } = useFilters();
   const { data, outlets, months } = useQualityData(filters);
 
   const kpis = useMemo(() => ({
@@ -111,7 +111,7 @@ export default function QualityInsights() {
         gradient={`linear-gradient(135deg, ${theme.muted}, #6b5a80)`}
       />
 
-      <FilterBar outlets={outlets} months={months} selectedOutlet={outlet} selectedMonth={month} onOutletChange={setOutlet} onMonthChange={setMonth} onReset={reset} />
+      <FilterBar outlets={outlets} months={months} selectedOutlets={selectedOutlets} selectedMonths={selectedMonths} onOutletChange={setOutlets} onMonthChange={setMonths} onReset={reset} />
 
       {/* KPI Row 1 */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(170px, 1fr))', gap: '12px', marginBottom: '12px' }}>

@@ -5,10 +5,10 @@ import qualityData from '../data/quality.json';
 export function useSalesData(filters = {}) {
   const filtered = useMemo(() => {
     let data = salesData;
-    if (filters.outlet) data = data.filter((r) => r.Outlet_Name === filters.outlet);
-    if (filters.month) data = data.filter((r) => r.Month === filters.month);
+    if (filters.outlets?.length) data = data.filter((r) => filters.outlets.includes(r.Outlet_Name));
+    if (filters.months?.length) data = data.filter((r) => filters.months.includes(r.Month));
     return data;
-  }, [filters.outlet, filters.month]);
+  }, [filters.outlets, filters.months]);
 
   const outlets = useMemo(() => [...new Set(salesData.map((r) => r.Outlet_Name))], []);
   const months = useMemo(() => [...new Set(salesData.map((r) => r.Month))], []);
@@ -19,10 +19,10 @@ export function useSalesData(filters = {}) {
 export function useQualityData(filters = {}) {
   const filtered = useMemo(() => {
     let data = qualityData;
-    if (filters.outlet) data = data.filter((r) => r.Outlet_Name === filters.outlet);
-    if (filters.month) data = data.filter((r) => r.Month === filters.month);
+    if (filters.outlets?.length) data = data.filter((r) => filters.outlets.includes(r.Outlet_Name));
+    if (filters.months?.length) data = data.filter((r) => filters.months.includes(r.Month));
     return data;
-  }, [filters.outlet, filters.month]);
+  }, [filters.outlets, filters.months]);
 
   const outlets = useMemo(() => [...new Set(qualityData.map((r) => r.Outlet_Name))], []);
   const months = useMemo(() => [...new Set(qualityData.map((r) => r.Month))], []);
@@ -31,13 +31,13 @@ export function useQualityData(filters = {}) {
 }
 
 export function useFilters() {
-  const [outlet, setOutlet] = useState('');
-  const [month, setMonth] = useState('');
+  const [outlets, setOutlets] = useState([]);
+  const [months, setMonths] = useState([]);
 
   const reset = () => {
-    setOutlet('');
-    setMonth('');
+    setOutlets([]);
+    setMonths([]);
   };
 
-  return { outlet, month, setOutlet, setMonth, reset, filters: { outlet, month } };
+  return { outlets, months, setOutlets, setMonths, reset, filters: { outlets, months } };
 }

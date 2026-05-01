@@ -16,7 +16,7 @@ import {
 
 export default function SalesInsights() {
   const { theme } = useTheme();
-  const { outlet, month, setOutlet, setMonth, reset, filters } = useFilters();
+  const { outlets: selectedOutlets, months: selectedMonths, setOutlets, setMonths, reset, filters } = useFilters();
   const { data, outlets, months } = useSalesData(filters);
 
   const kpis = useMemo(() => ({
@@ -73,7 +73,7 @@ export default function SalesInsights() {
         gradient={`linear-gradient(135deg, ${theme.secondary}, #9e1d4a)`}
       />
 
-      <FilterBar outlets={outlets} months={months} selectedOutlet={outlet} selectedMonth={month} onOutletChange={setOutlet} onMonthChange={setMonth} onReset={reset} />
+      <FilterBar outlets={outlets} months={months} selectedOutlets={selectedOutlets} selectedMonths={selectedMonths} onOutletChange={setOutlets} onMonthChange={setMonths} onReset={reset} />
 
       {/* KPI Row 1 */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(170px, 1fr))', gap: '12px', marginBottom: '12px' }}>
