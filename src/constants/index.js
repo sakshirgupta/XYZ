@@ -22,6 +22,6 @@ export const MONTH_ORDER = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Au
 export const EMBED_URLS = {
   salesTableau: '',
   qualityTableau: '',
-  salesPowerBI: '',
+  salesPowerBI: 'https://app.powerbi.com/reportEmbed?reportId=674a1f1c-7fd2-463a-89b3-544bb71bc3ab&autoAuth=true&ctid=5b973f99-77df-4beb-b27d-aa0c70b8482c',
   qualityPowerBI: '',
 };
