@@ -1,4 +1,4 @@
-import { PageHeader, TableauEmbed, PowerBIEmbed } from '../components';
+import { PageHeader, PowerBIEmbed } from '../components';
 import { useTheme } from '../hooks';
 import { EMBED_URLS } from '../constants';
 import { TrendingUpRounded, PictureAsPdfRounded } from '@mui/icons-material';
@@ -7,19 +7,14 @@ export default function SalesDashboard() {
   const { theme } = useTheme();
 
   return (
-    <div style={{ maxWidth: '1400px', margin: '0 auto' }}>
+    <div>
       <PageHeader
         icon={TrendingUpRounded}
         title="Sales Dashboard"
         subtitle="Interactive sales analytics across all 10 outlets"
         gradient={`linear-gradient(135deg, ${theme.primary}, #0d5f5b)`}
       />
-      <TableauEmbed url={EMBED_URLS.salesTableau} title="Sales Dashboard — Tableau" />
-      {EMBED_URLS.salesPowerBI && (
-        <div style={{ marginTop: '24px' }}>
-          <PowerBIEmbed url={EMBED_URLS.salesPowerBI} title="Sales Dashboard — Power BI" />
-        </div>
-      )}
+      <PowerBIEmbed url={EMBED_URLS.salesPowerBI} title="Sales Dashboard — Power BI" />
 
       {/* PDF Fallback */}
       <div style={{
@@ -61,9 +56,9 @@ export default function SalesDashboard() {
         borderRadius: '10px', border: `1px solid ${theme.border}`,
         display: 'flex', alignItems: 'center', gap: '10px',
       }}>
-        <div style={{ width: 7, height: 7, borderRadius: '50%', backgroundColor: (EMBED_URLS.salesTableau || EMBED_URLS.salesPowerBI) ? theme.status.success : theme.status.warning }} />
+        <div style={{ width: 7, height: 7, borderRadius: '50%', backgroundColor: theme.status.success }} />
         <span style={{ fontSize: '12px', color: theme.text.muted }}>
-          {(EMBED_URLS.salesTableau || EMBED_URLS.salesPowerBI) ? 'Connected — Filters and interactions active' : 'Awaiting embed URL → src/constants/index.js'}
+          Connected — Filters and interactions active (requires org sign-in; PDF fallback available)
         </span>
       </div>
     </div>
