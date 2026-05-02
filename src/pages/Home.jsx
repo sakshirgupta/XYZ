@@ -39,8 +39,8 @@ export default function Home() {
   }, [salesData, qualityData, avgSatisfaction, avgQualityScore]);
 
   const dashboards = [
-    { path: '/sales-dashboard', title: 'Sales Dashboard', desc: 'Tableau-powered revenue analytics with outlet comparisons', badge: 'Tableau', gradient: `linear-gradient(135deg, ${theme.primary}, #0d5f5b)` },
-    { path: '/quality-dashboard', title: 'Quality Dashboard', desc: 'Tableau-powered quality metrics and compliance tracking', badge: 'Tableau', gradient: `linear-gradient(135deg, ${theme.accent}, #003057)` },
+    { path: '/sales-dashboard', title: 'Sales Dashboard', desc: 'Power BI revenue analytics with outlet comparisons', badge: 'Power BI', gradient: `linear-gradient(135deg, ${theme.primary}, #0d5f5b)` },
+    { path: '/quality-dashboard', title: 'Quality Dashboard', desc: 'Power BI quality metrics and compliance tracking', badge: 'Power BI', gradient: `linear-gradient(135deg, ${theme.accent}, #003057)` },
     { path: '/sales-insights', title: 'Sales Insights', desc: 'Interactive React charts: revenue trends, margins & footfall', badge: 'React', gradient: `linear-gradient(135deg, ${theme.secondary}, #9e1d4a)` },
     { path: '/quality-insights', title: 'Quality Insights', desc: 'React-driven analysis: defect rates, compliance & scores', badge: 'React', gradient: `linear-gradient(135deg, ${theme.muted}, #6b5a80)` },
   ];
@@ -72,7 +72,7 @@ export default function Home() {
             Sales & Quality Analytics Portal
           </h1>
           <p style={{ margin: 0, fontSize: '15px', color: theme.text.secondary, maxWidth: '480px', lineHeight: 1.6 }}>
-            Unified intelligence platform combining Tableau dashboards with React-powered interactive insights.
+            Unified intelligence platform combining Power BI dashboards with React-powered interactive insights.
           </p>
         </div>
       </div>
@@ -101,7 +101,7 @@ export default function Home() {
                 width: '36px', height: '36px', borderRadius: '10px', background: gradient,
                 display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff',
               }}>
-                {badge === 'Tableau' ? <AssessmentRounded style={{ fontSize: '18px' }} /> : <InsightsRounded style={{ fontSize: '18px' }} />}
+                {badge === 'Power BI' ? <AssessmentRounded style={{ fontSize: '18px' }} /> : <InsightsRounded style={{ fontSize: '18px' }} />}
               </div>
               <span style={{
                 fontSize: '9px', fontWeight: 700, padding: '3px 7px', borderRadius: '4px',
@@ -146,7 +146,7 @@ export default function Home() {
       </div>
 
       <div style={{ textAlign: 'center', padding: '20px', color: theme.text.muted, fontSize: '12px' }}>
-        XYZ Retail Chain Analytics Portal • React + Tableau + Power BI
+        XYZ Retail Chain Analytics Portal • React + Power BI
       </div>
     </div>
   );

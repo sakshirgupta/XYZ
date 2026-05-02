@@ -13,7 +13,7 @@ export default function About() {
     {
       icon: <StorefrontRounded />,
       title: 'About This Project',
-      content: 'This analytics portal was built for XYZ Retail Chain — a Bangalore-based retailer with 10 outlets. It provides a unified platform combining Tableau/Power BI embedded dashboards with React-powered interactive analytics, demonstrating full-stack data visualization capabilities.',
+      content: 'This analytics portal was built for XYZ Retail Chain — a Bangalore-based retailer with 10 outlets. It provides a unified platform combining Power BI embedded dashboards with React-powered interactive analytics, demonstrating full-stack data visualization capabilities.',
     },
     {
       icon: <DatasetRounded />,
@@ -33,7 +33,7 @@ export default function About() {
         'Custom hooks (useSalesData, useQualityData) with memoized filtering',
         'Theme context with localStorage persistence for dark/light mode',
         'Recharts for responsive, interactive SVG charts with theme-aware colors',
-        'Tableau embed via Web Component API; Power BI via iframe embed',
+        'Power BI embed via iframe with org authentication; PDF fallbacks included',
         'Component-driven architecture: ui/, layout/, embed/, charts/ separation',
         'CSS-in-JS with theme tokens — no CSS class conflicts, full type safety',
       ],
@@ -46,9 +46,9 @@ export default function About() {
         'React Router v7 — Client-side routing with nested layouts',
         'Recharts — Declarative SVG charts (Area, Bar, Radar, Pie, Composed)',
         'Material UI Icons — Consistent iconography across the app',
-        'Tableau Public — Dashboard hosting & JS API embed',
+        'Power BI Service — Dashboard hosting & org iframe embed',
         'Power BI Embedded — iframe-based dashboard integration',
-        'Inter (Google Fonts) — Typography consistent with Tableau dashboards',
+        'Inter (Google Fonts) — Clean, modern typography',
       ],
     },
   ];
