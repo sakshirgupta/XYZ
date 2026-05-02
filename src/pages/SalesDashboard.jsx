@@ -1,7 +1,7 @@
 import { PageHeader, TableauEmbed, PowerBIEmbed } from '../components';
 import { useTheme } from '../hooks';
 import { EMBED_URLS } from '../constants';
-import { TrendingUpRounded } from '@mui/icons-material';
+import { TrendingUpRounded, PictureAsPdfRounded } from '@mui/icons-material';
 
 export default function SalesDashboard() {
   const { theme } = useTheme();
@@ -20,6 +20,42 @@ export default function SalesDashboard() {
           <PowerBIEmbed url={EMBED_URLS.salesPowerBI} title="Sales Dashboard — Power BI" />
         </div>
       )}
+
+      {/* PDF Fallback */}
+      <div style={{
+        marginTop: '24px', padding: '20px', backgroundColor: theme.surface,
+        borderRadius: '14px', border: `1px solid ${theme.card.border}`,
+      }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
+          <PictureAsPdfRounded style={{ color: theme.secondary, fontSize: '20px' }} />
+          <span style={{ fontSize: '14px', fontWeight: 600, color: theme.text.primary }}>
+            Dashboard Preview (PDF)
+          </span>
+          <span style={{ fontSize: '11px', color: theme.text.muted }}>
+            — If the interactive embed requires sign-in, view the static version below
+          </span>
+        </div>
+        <iframe
+          src="/Sales%20Dashboard.pdf"
+          title="Sales Dashboard PDF"
+          style={{
+            width: '100%', height: '600px', border: 'none', borderRadius: '10px',
+            backgroundColor: theme.surface,
+          }}
+        />
+        <a
+          href="/Sales%20Dashboard.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: 'inline-block', marginTop: '10px', fontSize: '12px',
+            color: theme.primary, textDecoration: 'none', fontWeight: 500,
+          }}
+        >
+          Open PDF in new tab ↗
+        </a>
+      </div>
+
       <div style={{
         marginTop: '16px', padding: '12px 18px', backgroundColor: theme.surface,
         borderRadius: '10px', border: `1px solid ${theme.border}`,
