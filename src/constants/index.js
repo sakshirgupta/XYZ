@@ -18,7 +18,7 @@ export const NAV_ITEMS = [
 
 export const MONTH_ORDER = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
-// Power BI embed URLs (append &filterPaneEnabled=false&navContentPaneEnabled=false to hide panels)
+
 export const EMBED_URLS = {
   salesPowerBI: 'https://app.powerbi.com/reportEmbed?reportId=674a1f1c-7fd2-463a-89b3-544bb71bc3ab&autoAuth=true&ctid=5b973f99-77df-4beb-b27d-aa0c70b8482c&filterPaneEnabled=false&navContentPaneEnabled=false',
   qualityPowerBI: 'https://app.powerbi.com/reportEmbed?reportId=068002b1-5939-459c-afe2-ebc4f3db6a72&autoAuth=true&ctid=5b973f99-77df-4beb-b27d-aa0c70b8482c&filterPaneEnabled=false&navContentPaneEnabled=false',
